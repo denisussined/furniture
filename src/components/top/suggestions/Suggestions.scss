@@ -1,0 +1,101 @@
+@import "../../../mixin/Mixins";
+
+.wrapper {
+  position: relative;
+}
+
+.swiper-slide {
+  background-position: center;
+  background-size: cover;
+  width: auto;
+  left: 120px;
+  padding: 0 15px;
+}
+
+.swiper-slide img {
+  width: 70vw;
+}
+
+.swiper-container-horizontal>.swiper-pagination-bullets, .swiper-pagination-custom, .swiper-pagination-fraction {
+  bottom: unset;
+  position: relative;
+  z-index: 100;
+  height: 80px;
+  margin: auto 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #E89F71 !important;
+  border: transparent 6px solid;
+  background-clip: padding-box;
+  box-shadow: 0 0 0 0.5px #E89F71;
+}
+
+.limiter {
+  position: absolute;
+  @include limit;
+  width: 100%;
+}
+
+.navigation {
+  grid-column: 2 / 3;
+  height: 80px;
+  margin: auto 0 auto auto;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  gap: 20px;
+}
+
+.prev, .next {
+  z-index: 100;
+  padding: 14px 18px;
+  margin: 17px 0;
+  border-radius: 50%;
+  background-color: #E89F71;
+  color: white;
+  cursor: pointer;
+}
+
+.card{
+  position: absolute;
+  left: 80px;
+  z-index: 50;
+  width: 35vw;
+  opacity: 0.95;
+}
+
+@media (max-width: 900px) {
+  .card {
+    visibility: hidden;
+  }
+
+  .navigation {
+    justify-content: space-between;
+    margin: 0;
+    height: 50px;
+  }
+
+  .prev, .next {
+    padding: 9px 13px;
+    margin: 0;
+  }
+
+  .swiper-container-horizontal>.swiper-pagination-bullets, .swiper-pagination-custom, .swiper-pagination-fraction {
+    height: 50px;
+  }
+}
+
+@media (max-width: 550px) {
+  .swiper-slide {
+    left: 0;
+  }
+
+  .swiper-slide img {
+    width: 95vw;
+  }
+}
