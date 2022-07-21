@@ -1,0 +1,86 @@
+@import "../../../mixin/Mixins"
+
+.wrapper
+  grid-column-start: 2
+  max-width: 1240px
+  padding: 25px 0
+  font-size: 16px
+
+  display: flex
+  flex-flow: row wrap
+  justify-content: space-between
+  align-items: center
+  column-gap: 50px
+  row-gap: 25px
+
+.logotype
+  position: relative
+
+  height: 44px
+  width: 110px
+
+.logotype__image
+  position: absolute
+  top: 7px
+  left: 0
+
+  height: 30px
+
+.logotype__text
+  position: absolute
+  top: 9px
+  left: 35px
+  @include textFormat(1.5em, 700, 29px)
+
+.navbar
+  display: flex
+  gap: 40px
+
+.navbar__item
+  @include textFormat(1em, 500, 24px)
+
+.search
+  position: relative
+
+.search__lens
+  position: absolute
+  top: 10px
+  left: 12px
+
+.search__input
+  height: 44px
+  width: 300px
+  margin: 0
+  padding: 0 5px 0 45px
+  border: 0
+  @include textFormat(1em, 400, 21px)
+
+@media (max-width: 950px)
+  .search__input
+    width: 32vw
+
+@media (max-width: 817px)
+  .navbar
+    order: 2
+    margin: 0 auto
+
+@media (max-width: 700px)
+  .wrapper
+    font-size: 14px
+
+@media (max-width: 540px)
+  .wrapper
+    padding: 10px 0
+    row-gap: 10px
+
+  .search__input
+    height: 25px
+    width: 27vw
+    padding: 0 5px 0 25px
+
+  .search__lens
+    height: 15px
+    top: 5px
+    left: 5px
+
+
